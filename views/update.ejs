@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+body {
+  /* background-color: #1984d6; */
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.demo{
+  color: blue;
+}
+
+
+
+table, tr, td, th{
+  border: 1px solid black;
+}
+
+
+/* --==============>>>>>>-CSSSSSS handwritten============*/
+
+
+.container form .title{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: rgb(45, 135, 176);
+}
+
+.container form .fields{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .fields .input-field{
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+.input-field label{
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.input-field input, select{
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field select,
+.input-field input[type="date"]{
+  color: #707070;
+}
+.input-field input[type="date"]:valid{
+  color: #333;
+}
+.container form button, .backBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  margin: 25px 0;
+  background-color: #4070f4;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.container form .btnText{
+  font-size: 14px;
+  font-weight: 400;
+}
+form button:hover{
+  background-color: #265df2;
+}
+form button i,
+form .backBtn i{
+  margin: 0 6px;
+}
+form .backBtn i{
+  transform: rotate(180deg);
+}
+form .buttons{
+  display: flex;
+  align-items: center;
+}
+form .buttons button , .backBtn{
+  margin-right: 14px;
+}
+
+
+table, tr, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+
+/* ==============CSS for table starts here+=========== */
+
+   /* Style the header */
+   .header {
+    grid-area: header;
+    background-color: #F0F8FF;
+    padding: 30px;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  /* The grid container */
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left middle middle right right' 
+      'footer footer footer footer footer footer';
+    /* grid-column-gap: 10px; - if you want gap between the columns */
+  } 
+
+  .left,
+  .middle,
+  .right {
+    padding: 10px;
+    /* height: 300px; Should be removed. Only for demonstration */
+  }
+
+  /* Style the left column */
+  .left {
+    grid-area: left;
+  }
+
+  /* Style the middle column */
+  .middle {
+    grid-area: middle;
+  }
+
+  /* Style the right column */
+  .right {
+    grid-area: right;
+  }
+
+  /* Style the footer */
+  .footer {
+    grid-area: footer;
+    background-color: #F0F8FF;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    .grid-container  {
+      grid-template-areas: 
+        'header header header header header header' 
+        'left left left left left left' 
+        'middle middle middle middle middle middle' 
+        'right right right right right right' 
+        'footer footer footer footer footer footer';
+    }
+  }
+
+  img
+  {
+    float: right;
+  }
+
+  .input
+  {
+    font-size:20px;
+  }
+
+  table {
+    border-spacing: 60px;
+    padding: 26px; 
+    /* margin: 20px; */
+
+  }
+
+  td
+  {
+    padding: 12px;
+  }
+
+
+
+
+  </style>
+</head>
+<body>
+  <div id="page-content-wrapper">
+    <div class="container-fluid main-body px-4 bgmain">
+      <div class="row g-3">
+        <div class="col-xs-3 mx-auto">
+          <div class="container">
+
+            <div class="jumbotron text-center">
+
+            <form action="/update" method="post">
+              <input type="text" name="collegename" value="<%= user.name %>" readonly>
+              
+              <input type="hidden"  name="_id" value="<%=post._id%>">
+              <label for="">Date</label>
+              
+              
+              <select name="date" id="cars" value="<%=post.date%>">
+                <option selected="" value="Default">Select Year Again</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+              </select>
+              
+              <label for="">Branch</label>
+                <select name="Branch" id="cars" value="<%=post.Branch%>">
+                  <option selected="" value="Default">Select Branch Again</option>
+                  <option value="CSE">CSE</option>
+                  <option value="CE">CE</option>
+                  <option value="ME">ME</option>
+                  <option value="CE">EE</option>
+                  <option value="BBA">BBA</option>
+                  <option value="MBA">MBA</option>    
+                </select>
+              <br>
+
+              <div class="details personal">
+    
+                  <div class="fields">
+                        <div class="input-field">
+                          <label for="">Eligible_Students</label>
+                          <input type="number" name="Eligible_Students" value="<%=post.Total_Students%>">
+                        </div>
+
+                        <div class="input-field">
+                          <label for="">PNR_Students</label>
+                          <input type="number" name="PNR_Students" value="<%=post.PNR_Students%>">    
+                        </div>
+
+                        <div class="input-field">
+                          <label for="">Placed_Students</label>
+                          <input type="number" name="Placed_Students" value="<%=post.Placed_Students%>">    
+                        </div>
+
+                        <div class="input-field">
+                          <label for="">Offer_Letters</label>
+                          <input type="number" name="Offer_Letters" value="<%=post.Offer_Letters%>">    
+                        </div>
+
+                        <div class="input-field">
+                          <label for="">Lowest_Package</label>
+                          <input type="number" name="Lowest_Package" value="<%=post.Lowest_Package%>">    
+                        </div>
+
+                        <div class="input-field">
+                          <label for="">Highest_Package</label>
+                          <input type="number" name="Highest_Package" value="<%=post.Highest_Package%>">
+                        </div>
+
+                        <div class="input-field">
+                          <label for="">Average_Package</label>
+                          <input type="number" name="Average_Package" value="<%=post.Average_Package%>">
+                        </div>
+
+                        <div class="input-field">
+                          <label for="">No_of_Companies</label>
+                          <input type="number" name="No_of_Companies" value="<%=post.No_of_Companies%>">
+                        </div>
+                  </div>
+                  <button type="submit">go</button>
+          </form>
+      
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+     
+    <iframe style="border: solid 2px red;" src="https://charts.mongodb.com/charts-auth-xcwit/public/dashboards/a5ef4786-88cb-417c-8d4c-7cf4fa0284d1" frameborder="0" width="1430" height="600"></iframe>
+        
+</body>
+</html>
+
+  

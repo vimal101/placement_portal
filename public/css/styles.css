@@ -1,0 +1,224 @@
+
+body {
+  background-color: #1984d6;
+}
+
+.company-heading{
+  text-align: center;
+  color: #000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.demo{
+  color: blue;
+}
+
+
+
+table, tr, td, th{
+  border: 1px solid black;
+}
+
+
+/* --==============>>>>>>-CSSSSSS handwritten============*/
+
+
+.container form .title{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: rgb(45, 135, 176);
+}
+
+.container form .fields{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .fields .input-field{
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+.input-field label{
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.input-field input, select{
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field select,
+.input-field input[type="date"]{
+  color: #707070;
+}
+.input-field input[type="date"]:valid{
+  color: #333;
+}
+.container form button, .backBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  margin: 25px 0;
+  background-color: #4070f4;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.container form .btnText{
+  font-size: 14px;
+  font-weight: 400;
+}
+form button:hover{
+  background-color: #265df2;
+}
+form button i,
+form .backBtn i{
+  margin: 0 6px;
+}
+form .backBtn i{
+  transform: rotate(180deg);
+}
+form .buttons{
+  display: flex;
+  align-items: center;
+}
+form .buttons button , .backBtn{
+  margin-right: 14px;
+}
+
+
+table, tr, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+
+/* ==============CSS for table starts here+=========== */
+
+   /* Style the header */
+   .header {
+    grid-area: header;
+    background-color: #F0F8FF;
+    padding: 30px;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  /* The grid container */
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left middle middle right right' 
+      'footer footer footer footer footer footer';
+    /* grid-column-gap: 10px; - if you want gap between the columns */
+  } 
+
+  .left,
+  .middle,
+  .right {
+    padding: 10px;
+    /* height: 300px; Should be removed. Only for demonstration */
+  }
+
+  /* Style the left column */
+  .left {
+    grid-area: left;
+  }
+
+  /* Style the middle column */
+  .middle {
+    grid-area: middle;
+  }
+
+  /* Style the right column */
+  .right {
+    grid-area: right;
+  }
+
+  /* Style the footer */
+  .footer {
+    grid-area: footer;
+    background-color: #F0F8FF;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    .grid-container  {
+      grid-template-areas: 
+        'header header header header header header' 
+        'left left left left left left' 
+        'middle middle middle middle middle middle' 
+        'right right right right right right' 
+        'footer footer footer footer footer footer';
+    }
+  }
+
+  img
+  {
+    float: right;
+  }
+
+  .input
+  {
+    font-size:20px;
+  }
+
+  table {
+    border-spacing: 60px;
+    padding: 26px; 
+    /* margin: 20px; */
+
+  }
+
+  td
+  {
+    padding: 12px;
+  }
+
+
+
+.date{
+  display: inline-block;
+}
+
+.branch{
+  display: inline-block;
+}
