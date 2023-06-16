@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 const passportLocalMongoose = require('passport-local-mongoose');
-mongoose.connect("mongodb+srv://singhvimal2002:Vimal%40123@cluster0.aj4n2xh.mongodb.net/portal",{useNewUrlParser:true});
-
+mongoose.connect("/portal",{useNewUrlParser:true});
+// mongodb+srv://singhvimal2002:Vimal%40123@cluster0.aj4n2xh.mongodb.net
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
